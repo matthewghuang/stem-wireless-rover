@@ -20,8 +20,7 @@ io.on("connection", (socket: Socket) => {
 
 	// clients will send a direction instruction, the ESP8266 will wait for
 	// this instruction and act accordingly
-	socket.on("set_input", (dir: number, forward: boolean,
-			reverse: boolean) => {
+	socket.on("set_input", (dir: number, forward: boolean, reverse: boolean) => {
 		socket.broadcast.emit("get_input", dir, forward, reverse)
 	})
 })
