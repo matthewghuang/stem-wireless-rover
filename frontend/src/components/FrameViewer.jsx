@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { get_socket } from "../socket"
 
-export const FrameViewer = ({ socket }) => {
+export const FrameViewer = () => {
 	const [image_source, set_image_source] = useState("")
 
 	useEffect(() => {
