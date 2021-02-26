@@ -17,9 +17,9 @@ export const App = () => {
 	return loading ? (
 		<div className="text-lg">Connecting...</div>
 	) : (
-		<div>
-			<DirectionController></DirectionController>
+		<div className="md:w-3/5 mx-auto">
 			<FrameViewer></FrameViewer>
+			<DirectionController></DirectionController>
 		</div>
 	)
 }
