@@ -10,6 +10,33 @@ export const DirectionController = () => {
 		socket.emit("set_direction", direction)
 	}, [direction])
 
+	useEffect(() => {
+		addEventListener("keydown", event => {
+			const key = event.key
+
+			switch (key) {
+				case "ArrowUp":
+					set_direction("up")
+					break
+				case "ArrowLeft":
+					set_direction("left")
+					break
+				case "ArrowRight":
+					set_direction("right")
+					break
+				case "ArrowDown":
+					set_direction("down")
+					break
+			}
+		})
+
+		addEventListener("keyup", event => {
+			const key = event.key
+
+			if (key.indexOf("Arrow") != -1) set_direction("")
+		})
+	}, [])
+
 	return (
 		<div className="grid grid-cols-3">
 			<div></div>
