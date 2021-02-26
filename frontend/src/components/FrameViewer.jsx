@@ -12,5 +12,9 @@ export const FrameViewer = () => {
 		})
 	}, [])
 
-	return <img src={image_source} />
+	return image_source == "" ? (
+		<span>No frames yet</span>
+	) : (
+		<img src={image_source}></img>
+	)
 }
