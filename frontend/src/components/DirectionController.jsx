@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react"
+import { get_socket } from "../socket"
 
 export const DirectionController = () => {
 	const [direction, set_direction] = useState("")
 
 	useEffect(() => {
-		console.log(direction)
+		const socket = get_socket()
+
+		socket.emit("set_direction", direction)
 	}, [direction])
 
 	return (
