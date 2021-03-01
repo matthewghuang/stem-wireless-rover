@@ -14,26 +14,19 @@ export const DirectionController = () => {
 		addEventListener("keydown", event => {
 			const key = event.key
 
-			switch (key) {
-				case "ArrowUp":
-					set_direction("up")
-					break
-				case "ArrowLeft":
-					set_direction("left")
-					break
-				case "ArrowRight":
-					set_direction("right")
-					break
-				case "ArrowDown":
-					set_direction("down")
-					break
-			}
+			if (key == "ArrowUp" || key == "w") set_direction("up")
+			else if (key == "ArrowLeft" || key == "a") set_direction("left")
+			else if (key == "ArrowRight" || key == "d") set_direction("right")
+			else if (key == "ArrowDown" || key == "s") set_direction("down")
 		})
 
 		addEventListener("keyup", event => {
 			const key = event.key
 
-			if (key.indexOf("Arrow") != -1) set_direction("")
+			if (key == "ArrowUp" || key == "w") set_direction("")
+			else if (key == "ArrowLeft" || key == "a") set_direction("")
+			else if (key == "ArrowRight" || key == "d") set_direction("")
+			else if (key == "ArrowDown" || key == "s") set_direction("")
 		})
 	}, [])
 
