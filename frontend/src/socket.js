@@ -3,7 +3,9 @@ import { io } from "socket.io-client"
 let socket
 
 export const init = () => {
-	socket = io("ws://localhost:3000")
+	socket = io(
+		process.env.LOCAL ? "ws://localhost:3000" : "ws://10.32.239.124:3000"
+	)
 	return socket
 }
 

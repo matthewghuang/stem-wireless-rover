@@ -1,7 +1,9 @@
 const io = require("socket.io-client")
 const fs = require("fs")
 
-const socket = io("ws://localhost:3000")
+const socket = io(
+	process.env.LOCAL ? "ws://localhost:3000" : "ws://10.32.239.124:3000"
+)
 
 setInterval(() => {
 	const img = fs.readFileSync("./test.jpg", "base64")
