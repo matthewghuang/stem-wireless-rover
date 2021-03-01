@@ -14,7 +14,16 @@ const opts = {
 const webcam = node_webcam.create(opts)
 
 socket.on("connect", () => {
+	console.log("connected")
+
 	setInterval(() => {
-		webcam.capture("frame", (err, data) => socket.send("set_frame", data))
+		webcam.capture("frame", (err, data) => {
+			if (err) {
+				console.error(err)
+				return
+			}
+
+			socket.emit("set_frame", data)
+		})
 	}, 1000 / 30)
 })
