@@ -5,7 +5,6 @@ import { init } from "./socket"
 
 export const App = () => {
 	const [loading, set_loading] = useState(true)
-	const [ready, set_ready] = useState(false)
 
 	useEffect(() => {
 		const socket = init()
@@ -19,12 +18,10 @@ export const App = () => {
 
 	return loading ? (
 		<div className="text-lg">Connecting...</div>
-	) : ready ? (
-		<div className="md:w-3/5 mx-auto">
-			<FrameViewer></FrameViewer>
+	) : (
+		<div className="md:w-3/5 mx-auto flex justify-center">
+			<FrameViewer className="flex-grow"></FrameViewer>
 			<DirectionController></DirectionController>
 		</div>
-	) : (
-		<div>Waiting for camera...</div>
 	)
 }
