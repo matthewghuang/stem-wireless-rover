@@ -4,10 +4,6 @@ const io = require("socket.io-client")
 const socket = io("ws://localhost:3000")
 
 const opts = {
-	width: 1280,
-	height: 720,
-	quality: 100,
-	frames: 60,
 	saveShots: true,
 	output: "jpeg",
 	device: false,
