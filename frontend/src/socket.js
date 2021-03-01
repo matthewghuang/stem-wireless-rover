@@ -4,7 +4,7 @@ let socket
 
 export const init = () => {
 	socket = io(
-		process.env.LOCAL ? "ws://localhost:3000" : "ws://10.32.239.124:3000"
+		import.meta.env.LOCAL ? "ws://localhost:3000" : "ws://10.32.239.124:3000"
 	)
 	return socket
 }
