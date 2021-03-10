@@ -11,8 +11,6 @@ export const App = () => {
 
 		socket.on("connect", () => {
 			set_loading(false)
-
-			socket.on("get_frame", () => set_ready(true))
 		})
 	}, [])
 
