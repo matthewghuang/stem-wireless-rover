@@ -69,17 +69,17 @@ socket.on("connect", () => {
 			motor.stop(0)
 			motor.stop(1)
 		} else if (direction == "left") {
-			motor.run(0, 0, 100)
-			motor.run(1, 1, 100)
+			motor.run(0, 0, 25)
+			motor.run(1, 1, 25)
 		} else if (direction == "right") {
-			motor.run(0, 1, 100)
-			motor.run(1, 0, 100)
+			motor.run(0, 1, 25)
+			motor.run(1, 0, 25)
 		} else if (direction == "up") {
-			motor.run(0, 0, 100)
-			motor.run(1, 0, 100)
+			motor.run(0, 0, 50)
+			motor.run(1, 0, 50)
 		} else if (direction == "down") {
-			motor.run(0, 1, 100)
-			motor.run(1, 1, 100)
+			motor.run(0, 1, 50)
+			motor.run(1, 1, 50)
 		}
 	})
 })
